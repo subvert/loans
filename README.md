@@ -39,18 +39,18 @@ Application tests:
 
 ## Technologies Used
 
-Java 8
-jHipster
-Git
-Node.js
-Yarn
-Yeoman
-Bower
-AngularJS
-jQuery
-Spring
-SpringBoot
-Maven
+Java 8, 
+jHipster, 
+Git, 
+Node.js, 
+Yarn, 
+Yeoman, 
+Bower, 
+AngularJS, 
+jQuery, 
+Spring, 
+SpringBoot, 
+Maven, 
 Heroku
 
 I chose Java as my language as I'm confident in using Java and its my main development language.
