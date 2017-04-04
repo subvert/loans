@@ -19,6 +19,10 @@ Used the following dependencies for development to build and run:
 3. Gulp: Using Gulp as build system.
 4. Bower: Using Bower to manage CSS and JavaScript dependencies.
 
+To run in development mode, use the following command while in project root folder:
+
+    ./mvnw
+
 ## Production
 
 1. To optimize the loans application for production, run:
