@@ -6,6 +6,10 @@ aggregate loans by the tuple of (Network, Product, Month) with the
 total currency amounts and counts and output into a file CSV file
 Output.csv
 
+## Result
+"tmp" folder is created inside project root folder. Output file "Output.csv"
+is generated and save inside "tmp" folder.
+
 ## Development
 
 Used the following dependencies for development to build and run:

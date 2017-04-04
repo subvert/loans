@@ -125,7 +125,7 @@ public class LoanService {
 
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            outWriter = new BufferedWriter(new FileWriter(DIRECTORY_NAME + "RESULT_" + filename));
+            outWriter = new BufferedWriter(new FileWriter(DIRECTORY_NAME + "Output.csv"));
 
             csvFilePrinter = new CSVPrinter(outWriter, csvFileFormat);
             csvFilePrinter.printRecord(FILE_HEADER);
