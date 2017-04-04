@@ -43,8 +43,8 @@ import world.jumo.loans.service.LoanService;
 @SpringBootTest(classes = LoansApp.class)
 public class LoanResourceIntTest {
 
-    private static final Long DEFAULT_MSISDN = Long.valueOf(1);
-    private static final Long UPDATED_MSISDN = Long.valueOf(2);
+    private static final Long DEFAULT_MSISDN = 1L;
+    private static final Long UPDATED_MSISDN = 2L;
 
     private static final String DEFAULT_NETWORK = "AAAAAAAAAA";
     private static final String UPDATED_NETWORK = "BBBBBBBBBB";
@@ -168,7 +168,7 @@ public class LoanResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(loan.getId().intValue())))
-            .andExpect(jsonPath("$.[*].msisdn").value(hasItem(DEFAULT_MSISDN)))
+            .andExpect(jsonPath("$.[*].msisdn").value(hasItem(DEFAULT_MSISDN.intValue())))
             .andExpect(jsonPath("$.[*].network").value(hasItem(DEFAULT_NETWORK.toString())))
             .andExpect(jsonPath("$.[*].loanDate").value(hasItem(DEFAULT_LOAN_DATE.toString())))
             .andExpect(jsonPath("$.[*].product").value(hasItem(DEFAULT_PRODUCT.toString())))
@@ -186,7 +186,7 @@ public class LoanResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(loan.getId().intValue()))
-            .andExpect(jsonPath("$.msisdn").value(DEFAULT_MSISDN))
+            .andExpect(jsonPath("$.msisdn").value(DEFAULT_MSISDN.intValue()))
             .andExpect(jsonPath("$.network").value(DEFAULT_NETWORK.toString()))
             .andExpect(jsonPath("$.loanDate").value(DEFAULT_LOAN_DATE.toString()))
             .andExpect(jsonPath("$.product").value(DEFAULT_PRODUCT.toString()))

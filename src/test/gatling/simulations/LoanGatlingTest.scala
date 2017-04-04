@@ -68,7 +68,7 @@ class LoanGatlingTest extends Simulation {
             .exec(http("Create new loan")
             .post("/api/loans")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "msisdn":"0", "network":"SAMPLE_TEXT", "loanDate":"2020-01-01T00:00:00.000Z", "product":"SAMPLE_TEXT", "amount":null}""")).asJSON
+            .body(StringBody("""{"id":null, "msisdn":null, "network":"SAMPLE_TEXT", "loanDate":"2020-01-01T00:00:00.000Z", "product":"SAMPLE_TEXT", "amount":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_loan_url"))).exitHereIfFailed
             .pause(10)
