@@ -14,7 +14,7 @@ is generated and save inside "tmp" folder.
 
 Used the following dependencies for development to build and run:
 
-1. Node.js: Using Node to run a development web server and build the project.
+1. Node.js: Using Node to run a development web server and build the project. (Please use the latest LTS version to be compatible with JHipster)
 2. Yarn: Using Yarn to manage Node dependencies.
 3. Gulp: Using Gulp as build system.
 4. Bower: Using Bower to manage CSS and JavaScript dependencies.
