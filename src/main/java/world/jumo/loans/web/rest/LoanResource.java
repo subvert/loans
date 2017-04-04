@@ -10,6 +10,11 @@ import world.jumo.loans.service.dto.LoanDTO;
 import world.jumo.loans.service.mapper.LoanMapper;
 import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -21,10 +26,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Level;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
 import world.jumo.loans.service.LoanService;
 
@@ -42,7 +48,7 @@ public class LoanResource {
     private final LoanRepository loanRepository;
 
     private final LoanMapper loanMapper;
-    
+
     private final LoanService loanService;
 
     public LoanResource(LoanRepository loanRepository, LoanMapper loanMapper, LoanService loanService) {
@@ -62,7 +68,7 @@ public class LoanResource {
     @Timed
     public ResponseEntity<LoanDTO> uploadLoan(@RequestParam(value = "file") MultipartFile file) throws URISyntaxException {
         log.debug("REST request to upload Loans : {}", file.getOriginalFilename());
-        
+
         try {
             loanService.processFile(file);
         } catch (Exception ex) {
@@ -73,7 +79,29 @@ public class LoanResource {
                 .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, file.getName()))
                 .body(null);
     }
-    
+
+    @GetMapping("/loans/aggregate")
+    @Timed
+    public void download(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        File file = new File(LoanService.DIRECTORY_NAME + LoanService.OUTPUT_FILENAME);
+        try (InputStream fileInputStream = new FileInputStream(file);
+                OutputStream output = response.getOutputStream();) {
+
+            response.reset();
+
+            response.setContentType("application/octet-stream");
+            response.setContentLength((int) (file.length()));
+
+            response.setHeader("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"");
+
+            IOUtils.copyLarge(fileInputStream, output);
+            output.flush();
+        } catch (IOException e) {
+            log.debug(e.getMessage(), e);
+            throw e;
+        }
+    }
+
     /**
      * GET /loans : get all the loans.
      *

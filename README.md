@@ -79,3 +79,7 @@ I am willing and keen to learn new technologies, etc and also to express that I 
 1. Originally, data type was Integer for MSISDN. Updated to Long subsequently, however, large values still seem to be 
 giving Numeric value out of range exception even though the max value of Long is 9,223,372,036,854,775,807. For the sake of saving
 time in this test, I did not spend too much time fixing this issue and tested with smaller values.
+
+2. When deploying to production in cloud (Heroku), application fails on startup due to datasource instantiation error.
+
+3. Didn't complete downloading of result file to client. Copy of result file resides on server for viewing.

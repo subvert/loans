@@ -38,7 +38,8 @@ public class LoanService {
 
     private final Logger log = LoggerFactory.getLogger(LoanService.class);
 
-    private static final String DIRECTORY_NAME = "tmp/";
+    public static final String DIRECTORY_NAME = "tmp/";
+    public static final String OUTPUT_FILENAME = "Output.csv";
 
     //CSV file header
     private static final String[] FILE_HEADER_MAPPING = {"MSISDN", "Network", "Date", "Product", "Amount"};
@@ -125,7 +126,7 @@ public class LoanService {
 
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            outWriter = new BufferedWriter(new FileWriter(DIRECTORY_NAME + "Output.csv"));
+            outWriter = new BufferedWriter(new FileWriter(DIRECTORY_NAME + OUTPUT_FILENAME));
 
             csvFilePrinter = new CSVPrinter(outWriter, csvFileFormat);
             csvFilePrinter.printRecord(FILE_HEADER);
