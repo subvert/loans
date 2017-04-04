@@ -19,6 +19,8 @@ Used the following dependencies for development to build and run:
 3. Gulp: Using Gulp as build system.
 4. Bower: Using Bower to manage CSS and JavaScript dependencies.
 
+Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+
 ## Production
 
 1. To optimize the loans application for production, run:
@@ -29,7 +31,13 @@ Used the following dependencies for development to build and run:
 
     java -jar target/*.war
 
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+3. Can be deployed to the cloud for production using the following command:
+
+    yo jhipster:heroku
+    
+and then run:
+
+    heroku open
 
 ## Testing
 
