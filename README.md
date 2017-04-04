@@ -69,3 +69,9 @@ I am reasonably confident with the use of AngularJS as front-end and have been u
 
 I have not had much experience in Node, Yarn, Yeoman and Bower however, the reason for using it is also to show that
 I am willing and keen to learn new technologies, etc and also to express that I am able to pick new things up and learn swiftly.
+
+## Known Issues
+
+1. Originally, data type was Integer for MSISDN. Updated to Long subsequently, however, large values still seem to be 
+giving Numeric value out of range exception even though the max value of Long is 9,223,372,036,854,775,807. For the sake of saving
+time in this test, I did not spend too much time fixing this issue and tested with smaller values.
