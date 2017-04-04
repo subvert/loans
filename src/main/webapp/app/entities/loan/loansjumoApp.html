@@ -1,0 +1,52 @@
+<div>
+    <h2 data-translate="loansApp.loan.home.title">Loans</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="loan-jumo-app.upload" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="loansApp.loan.home.uploadLabel">
+                        Upload Loans
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="msisdn"><span data-translate="loansApp.loan.msisdn">Msisdn</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="network"><span data-translate="loansApp.loan.network">Network</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="loanDate"><span data-translate="loansApp.loan.loanDate">Loan Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="product"><span data-translate="loansApp.loan.product">Product</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="amount"><span data-translate="loansApp.loan.amount">Amount</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="loan in vm.loans track by loan.id">
+                    <td><a ui-sref="loan-jumo-app-detail({id:loan.id})">{{loan.id}}</a></td>
+                    <td>{{loan.msisdn}}</td>
+                    <td>{{loan.network}}</td>
+                        <td>{{loan.loanDate | date:'mediumDate'}}</td>
+                    <td>{{loan.product}}</td>
+                    <td>{{loan.amount}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="loan-jumo-app-detail({id:loan.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

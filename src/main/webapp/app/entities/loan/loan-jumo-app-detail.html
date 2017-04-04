@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span data-translate="loansApp.loan.detail.title">Loan</span> {{vm.loan.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="loansApp.loan.msisdn">Msisdn</span></dt>
+        <dd>
+            <span>{{vm.loan.msisdn}}</span>
+        </dd>
+        <dt><span data-translate="loansApp.loan.network">Network</span></dt>
+        <dd>
+            <span>{{vm.loan.network}}</span>
+        </dd>
+        <dt><span data-translate="loansApp.loan.loanDate">Loan Date</span></dt>
+        <dd>
+            <span>{{vm.loan.loanDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="loansApp.loan.product">Product</span></dt>
+        <dd>
+            <span>{{vm.loan.product}}</span>
+        </dd>
+        <dt><span data-translate="loansApp.loan.amount">Amount</span></dt>
+        <dd>
+            <span>{{vm.loan.amount}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,18 @@
+{
+    "loansApp": {
+        "loan" : {
+            "home": {
+                "title": "Loans",
+                "uploadLabel": "Upload Loans"
+            },
+            "detail": {
+                "title": "Loan"
+            },
+            "msisdn": "Msisdn",
+            "network": "Network",
+            "loanDate": "Loan Date",
+            "product": "Product",
+            "amount": "Amount"
+        }
+    }
+}

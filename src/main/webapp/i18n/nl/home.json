@@ -1,0 +1,8 @@
+{
+    "home": {
+        "title": "Welkom by Jumo World!",
+        "logged": {
+            "message": "U bent aangemeld als gebruiker \"{{username}}\"."
+        }
+    }
+}
