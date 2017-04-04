@@ -1,6 +1,6 @@
 # Jumo Loans
 
-# Task
+## Task
 Given the below CSV from our accounting department calculate the
 aggregate loans by the tuple of (Network, Product, Month) with the
 total currency amounts and counts and output into a file CSV file
