@@ -52,7 +52,7 @@ Application tests:
 ## Technologies Used
 
 Java 8, 
-jHipster, 
+JHipster, 
 Git, 
 Node.js, 
 Yarn, 
@@ -71,7 +71,7 @@ a significant time now.
 
 I am reasonably confident with the use of AngularJS as front-end and have been using it for about 2 years now.
 
-I have not had much experience in Node, Yarn, Yeoman and Bower however, the reason for using it is also to show that
+I have not had much experience in JHiptser, Node, Yarn, Yeoman and Bower however, the reason for using it is also to show that
 I am willing and keen to learn new technologies, etc and also to express that I am able to pick new things up and learn swiftly.
 
 ## Known Issues
